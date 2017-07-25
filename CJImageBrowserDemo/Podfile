@@ -1,0 +1,10 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+targetsArray = ['Demo']
+targetsArray.each do |t| 
+	target t do
+  		#use_frameworks!
+		pod 'SVProgressHUD'
+ 		pod 'SDWebImage'
+	end	
+end
