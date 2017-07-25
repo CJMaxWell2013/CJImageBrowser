@@ -67,7 +67,6 @@ static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
     browser.currentPhotoIndex = indexPath.row; // 弹出相册时显示的第一张图片是？
     browser.photos = photos; // 设置所有的图片
     [browser show];
- 
 }
 
 - (void)didReceiveMemoryWarning {
