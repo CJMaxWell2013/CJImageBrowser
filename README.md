@@ -6,7 +6,7 @@ a custom image browser for iOS
 Use CocoaPods  
 
 ``` ruby
-pod 'CJImageBrowser', '1.0.0' 
+pod 'CJImageBrowser', '1.0.1' 
 or 
 pod 'CJImageBrowser'
 ```
@@ -49,7 +49,8 @@ browser.photos = photos; // 设置所有的图片
 ```
 
 # Release Notes
- 
+
+**1.0.1** - a fix SVProgressHud to -CJ  for image brower dependence.  
 **1.0.0** - a simple image brower for iOS.  
 
 # License  
