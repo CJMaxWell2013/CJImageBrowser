@@ -1,1 +1,1 @@
-../../../SVProgressHUD-CJ/SVProgressHUD-CJ/SVProgressHUD/SVProgressAnimatedView.h
+../../../SVProgressHUD-CJ/SVProgressHUD-CJ/SVProgressAnimatedView.h

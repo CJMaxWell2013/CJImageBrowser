@@ -255,7 +255,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD-CJ/SVProgressHUD-CJ/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/SVProgressHUD-CJ/SVProgressHUD-CJ/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
