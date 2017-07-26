@@ -8,7 +8,7 @@
 
 #import "CJImageToolbar.h"
 #import "CJImageInfo.h"
-#import <SVProgressHUD-CJ/SVProgressHUD.h>
+#import <CJProgressHUD/SVProgressHUD.h>
 @interface CJImageToolbar()
 {
     // 显示页码

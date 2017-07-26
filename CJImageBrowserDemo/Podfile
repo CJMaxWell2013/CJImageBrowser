@@ -4,7 +4,7 @@ targetsArray = ['Demo']
 targetsArray.each do |t| 
 	target t do
   		#use_frameworks!
-		pod 'SVProgressHUD-CJ’
+		pod 'CJProgressHUD’
  		pod 'SDWebImage'
 	end	
 end
