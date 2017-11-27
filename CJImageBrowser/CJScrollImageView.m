@@ -164,8 +164,11 @@
         imageFrame = self.bounds;
         if (_photo.firstShow) { // 第一次显示的图片
             _photo.firstShow = NO; // 已经显示过了
-            _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
-            
+            if (nil == _photo.srcImageView) {
+                _imageView.frame = imageFrame;
+            }else {
+                _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
+            }
             [UIView animateWithDuration:0.3 animations:^{
                 _imageView.frame = imageFrame;
             } completion:^(BOOL finished) {
