@@ -11,15 +11,15 @@
 #import "CJImageInfo.h"
 #import "CJImageBrowser.h"
 @interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property (nonatomic,strong) NSArray *imageArray;
-
-@end
+    
+    @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+    
+    @property (nonatomic,strong) NSArray *imageArray;
+    
+    @end
 
 @implementation ViewController
-static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
+    static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,12 +32,12 @@ static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
     // Do any additional setup after loading the view, typically from a nib.
     
 }
-
+    
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.imageArray.count;
 }
-
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CJCollectionViewCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:kCJCollectionViewCellId forIndexPath:indexPath];
     collectionCell.imageUrl = self.imageArray[indexPath.row];
@@ -46,9 +46,9 @@ static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(80.0f, 80.0f);
 }
-
+    
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CJCollectionViewCell *iamgeCell = (CJCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
     NSInteger count = self.imageArray.count;
     // 1.封装图片数据
     NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
@@ -56,9 +56,8 @@ static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
     for (int i = 0; i < count; i++) {
         CJImageInfo *photo = [[CJImageInfo alloc] init];
         photo.url = [NSURL URLWithString:[self.imageArray[i] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]]; // 图片路径
-        if (indexPath.row == i) {
-            photo.srcImageView = [iamgeCell imageView]; // 来源于哪个UIImageView
-        }
+        CJCollectionViewCell *iamgeCell = (CJCollectionViewCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        photo.srcImageView = [iamgeCell imageView]; // 来源于哪个UIImageView
         [photos addObject:photo];
     }
     
@@ -68,11 +67,11 @@ static NSString *kCJCollectionViewCellId = @"kCJCollectionViewCellId";
     browser.photos = photos; // 设置所有的图片
     [browser show];
 }
-
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-@end
+    
+    
+    @end
